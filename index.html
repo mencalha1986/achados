@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Achados Úteis Por Aí</title>
+<meta name="description" content="Achados úteis, testados e aprovados, que cabem no bolso.">
+<link rel="icon" href="img/logo.png">
+<meta property="og:title" content="Achados Úteis Por Aí">
+<meta property="og:image" content="img/logo.png">
+<style>
+  :root{--bg1:#0F5E63;--bg2:#0A3B4A;--mint:#7EE8C8;--yellow:#FFD866;--cream:#F4F1E8;--ink:#0A3B4A}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;font-family:system-ui,'Segoe UI',Roboto,Arial,sans-serif;color:var(--cream);
+    background:linear-gradient(165deg,var(--bg1),var(--bg2)) fixed}
+  .wrap{max-width:520px;margin:0 auto;padding:28px 16px 40px}
+  header{text-align:center;margin-bottom:22px}
+  header img{width:96px;height:96px;border-radius:50%;border:3px solid var(--mint)}
+  h1{font-size:24px;margin:10px 0 4px;font-weight:900}
+  header p{margin:0;opacity:.85;font-size:15px}
+  .tag{display:inline-block;margin-top:12px;background:var(--mint);color:var(--ink);font-weight:800;font-size:13px;padding:6px 14px;border-radius:30px}
+  .card{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.08);border:2px solid rgba(126,232,200,.35);
+    border-radius:20px;padding:12px;margin:14px 0;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s}
+  .card:active,.card:hover{transform:scale(.985);border-color:var(--mint)}
+  .card img{width:96px;height:96px;object-fit:cover;border-radius:14px;background:#fff;flex:none}
+  .info{flex:1;min-width:0}
+  .info b{display:block;font-size:16px;line-height:1.25}
+  .info small{display:block;opacity:.8;font-size:13px;margin-top:3px}
+  .row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;gap:8px}
+  .price{background:var(--yellow);color:var(--ink);font-weight:900;padding:4px 10px;border-radius:10px;font-size:15px;white-space:nowrap}
+  .go{background:var(--mint);color:var(--ink);font-weight:900;padding:6px 12px;border-radius:12px;font-size:14px;white-space:nowrap}
+  .card.new{border-color:var(--yellow)}
+  .new-badge{display:inline-block;background:var(--yellow);color:var(--ink);font-size:11px;font-weight:900;padding:2px 8px;border-radius:8px;margin-bottom:4px}
+  footer{text-align:center;font-size:12px;opacity:.6;margin-top:26px;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="img/logo.png" alt="Achados Úteis Por Aí">
+    <h1>Achados Úteis Por Aí</h1>
+    <p>Achados testados e aprovados, que cabem no bolso 💸</p>
+    <span class="tag">👇 Toque no produto pra comprar</span>
+  </header>
+  <main id="lista"></main>
+  <footer>
+    Preços podem mudar. Confira na loja antes de comprar.<br>
+    Alguns links são de afiliado: você paga o mesmo e eu ganho uma pequena comissão 💚<br>
+    @achadosuteisporai
+  </footer>
+</div>
+<script src="produtos.js"></script>
+<script>
+  (itens => {
+    document.getElementById('lista').innerHTML = itens.slice().reverse().map((p, i) => `
+      <a class="card${i === 0 ? ' new' : ''}" href="${p.link}" target="_blank" rel="noopener sponsored">
+        <img src="${p.img}" alt="" loading="lazy">
+        <div class="info">
+          ${i === 0 ? '<span class="new-badge">NOVO</span>' : ''}
+          <b>${p.chamada}</b>
+          <small>${p.nome}</small>
+          <div class="row"><span class="price">R$ ${p.preco}</span><span class="go">Ver oferta →</span></div>
+        </div>
+      </a>`).join('');
+  })(window.PRODUTOS);
+</script>
+</body>
+</html>
