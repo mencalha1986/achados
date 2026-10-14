@@ -27,6 +27,51 @@ window.PRODUTOS = [
     "itemId": "14241654483"
   },
   {
+    "nome": "Mini processador sem fio 250ml",
+    "chamada": "Pica alho e cebola em 5 segundos",
+    "preco": "23,88",
+    "img": "img/proc1.webp",
+    "link": "https://s.shopee.com.br/AKbM2iw8y3",
+    "selo": "+3 mil vendidos",
+    "categoria": "cozinha",
+    "shopId": "832036467",
+    "itemId": "18931705150"
+  },
+  {
+    "nome": "Batedor/mixer elétrico 2 em 1 recarregável",
+    "chamada": "Cappuccino cremoso em 10 segundos",
+    "preco": "18,69",
+    "img": "img/mixer2.webp",
+    "link": "https://s.shopee.com.br/3B8BVXo5i0",
+    "selo": "+10 mil vendidos",
+    "categoria": "cozinha",
+    "shopId": "415175805",
+    "itemId": "22392992790"
+  },
+  {
+    "nome": "Cozedor de ovos elétrico a vapor",
+    "chamada": "Ovo cozido perfeito sem vigiar a panela",
+    "preco": "29,98",
+    "img": "img/ovos2.webp",
+    "link": "https://s.shopee.com.br/6q1TsH14Ws",
+    "selo": "+10 mil vendidos",
+    "categoria": "cozinha",
+    "shopId": "1531826276",
+    "itemId": "23199020709",
+    "aPartir": true
+  },
+  {
+    "nome": "Fatiador de legumes Kitop",
+    "chamada": "Couve fininha igual de restaurante",
+    "preco": "19,90",
+    "img": "img/fati1.webp",
+    "link": "https://s.shopee.com.br/6VOdTgjrkM",
+    "selo": "+6 mil vendidos",
+    "categoria": "cozinha",
+    "shopId": "386191827",
+    "itemId": "11674191849"
+  },
+  {
     "nome": "Mini soprador a jato 130.000 RPM recarregável",
     "chamada": "Mini soprador que limpa tudo",
     "preco": "45,59",
