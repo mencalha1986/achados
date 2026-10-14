@@ -49,6 +49,14 @@ window.PRODUTOS = [
     "selo": "🔥 +1 mil vendidos/mês"
   },
   {
+    "nome": "Mini soprador a jato 130.000 RPM recarregável",
+    "chamada": "Mini soprador que limpa TUDO: teclado, carro e churrasqueira",
+    "preco": "45,59",
+    "img": "img/soprador1.webp",
+    "link": "https://s.shopee.com.br/5fpWSfxntD",
+    "selo": "⭐ Nota 4,8"
+  },
+  {
     "nome": "Ampliador de tela 3D para celular",
     "chamada": "Transforme o celular numa telona (ótimo presente de Natal!)",
     "preco": "16,99",
