@@ -77,6 +77,8 @@
   .c-body small{font-size:11.5px;color:var(--muted);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .c-foot{margin-top:auto;display:flex;flex-direction:column;gap:7px;padding-top:4px}
   .c-price{display:flex;align-items:baseline;justify-content:space-between;gap:6px}
+  .c-price{flex-direction:column;align-items:flex-start;gap:0}
+  .c-price .from{font-size:10.5px;color:var(--muted);font-weight:700}
   .c-price strong{font-size:18px;font-weight:900;color:var(--teal-dark)}
   .c-tag{position:absolute;top:8px;left:8px;font-size:10.5px;font-weight:900;color:var(--teal-dark);background:var(--yellow);padding:4px 7px;border-radius:7px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
   .c-btn{text-align:center;background:var(--teal);color:#fff;font-weight:900;font-size:13.5px;padding:9px 6px;border-radius:11px}
@@ -138,7 +140,7 @@
 </main>
 
 <footer>
-  Preços e disponibilidade podem mudar. Confira na loja antes de comprar.<br>
+  Preços conferidos em <span id="conferido"></span>. Podem mudar a qualquer momento: confira na loja antes de comprar.<br>
   Alguns links são de afiliado: você paga o mesmo preço e a gente recebe uma pequena comissão, que ajuda a manter o garimpo 💚<br>
   <a href="https://instagram.com/achadosuteisporai" target="_blank" rel="noopener">@achadosuteisporai</a> · achadosuteisporai.com.br
 </footer>
@@ -147,6 +149,7 @@
 <script>
   const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const P = window.PRODUTOS, C = window.CATEGORIAS;
+  document.getElementById('conferido').textContent = window.PRECOS_CONFERIDOS_EM || '';
 
   // destaque
   const d = P.find(p => p.destaque);
@@ -157,7 +160,7 @@
         <span class="kicker">⭐ Destaque da semana</span>
         <h2>${esc(d.chamada)}</h2>
         <p>${esc(d.descricao || d.nome)}</p>
-        <div class="f-row"><span class="price-lg"><small>por</small>R$ ${esc(d.preco)}</span>${d.selo ? `<span class="badge">🔥 ${esc(d.selo)}</span>` : ''}</div>
+        <div class="f-row"><span class="price-lg"><small>${d.aPartir ? 'a partir de' : 'por'}</small>R$ ${esc(d.preco)}</span>${d.selo ? `<span class="badge">🔥 ${esc(d.selo)}</span>` : ''}</div>
         <span class="cta">Ver oferta na Shopee →</span>
       </div>
     </a>`;
@@ -170,7 +173,7 @@
         <b>${esc(p.chamada)}</b>
         <small>${esc(p.nome)}</small>
         <div class="c-foot">
-          <div class="c-price"><strong>R$ ${esc(p.preco)}</strong></div>
+          <div class="c-price">${p.aPartir ? '<small class="from">a partir de</small>' : ''}<strong>R$ ${esc(p.preco)}</strong></div>
           <span class="c-btn">Ver oferta</span>
         </div>
       </div>

@@ -1,6 +1,9 @@
+window.PRECOS_CONFERIDOS_EM = "14/10/2026";
 // Produtos do site achadosuteisporai.com.br
 // - categoria: "tecnologia" | "cozinha" | "organizacao" | "limpeza"
 // - destaque: true no produto que aparece grande no topo (só um)
+// - aPartir: true quando o produto tem variações com preços diferentes (mostra "a partir de")
+// - shopId/itemId: código do anúncio na Shopee (usado pra atualizar preço automaticamente)
 // - a ordem da lista é a ordem de exibição (mais novos primeiro)
 window.CATEGORIAS = [
   { id: "tecnologia",  nome: "Tecnologia",  icone: "📱" },
@@ -19,7 +22,9 @@ window.PRODUTOS = [
     "link": "https://s.shopee.com.br/AAHu8dfQke",
     "selo": "+80 mil vendidos",
     "categoria": "tecnologia",
-    "destaque": true
+    "destaque": true,
+    "shopId": "461633669",
+    "itemId": "14241654483"
   },
   {
     "nome": "Mini soprador a jato 130.000 RPM recarregável",
@@ -28,7 +33,9 @@ window.PRODUTOS = [
     "img": "img/soprador1.webp",
     "link": "https://s.shopee.com.br/5fpWSfxntD",
     "selo": "Nota 4,8",
-    "categoria": "tecnologia"
+    "categoria": "tecnologia",
+    "shopId": "1102604016",
+    "itemId": "58211751477"
   },
   {
     "nome": "Kit clips organizadores de fios autoadesivos",
@@ -37,7 +44,10 @@ window.PRODUTOS = [
     "img": "img/fios.webp",
     "link": "https://s.shopee.com.br/4fwz2Mh2S9",
     "selo": "+1 mil/mês",
-    "categoria": "organizacao"
+    "categoria": "organizacao",
+    "shopId": "1532748455",
+    "itemId": "50113505774",
+    "aPartir": true
   },
   {
     "nome": "Torneira gourmet inox com chuveirinho 360°",
@@ -46,7 +56,10 @@ window.PRODUTOS = [
     "img": "img/torneira.webp",
     "link": "https://s.shopee.com.br/5q8uyeNGqH",
     "selo": "+3 mil vendidos",
-    "categoria": "cozinha"
+    "categoria": "cozinha",
+    "shopId": "1007375842",
+    "itemId": "23892527526",
+    "aPartir": true
   },
   {
     "nome": "Desentupidor de pia, vaso e caixa de gordura",
@@ -55,7 +68,10 @@ window.PRODUTOS = [
     "img": "img/desentupidor.webp",
     "link": "https://s.shopee.com.br/1B81zdWys",
     "selo": "+20 mil vendidos",
-    "categoria": "limpeza"
+    "categoria": "limpeza",
+    "shopId": "751932079",
+    "itemId": "23594951442",
+    "aPartir": true
   },
   {
     "nome": "10 ganchos adesivos transparentes",
@@ -64,16 +80,9 @@ window.PRODUTOS = [
     "img": "img/ganchos.webp",
     "link": "https://s.shopee.com.br/3Vl09OVY38",
     "selo": "+20 mil vendidos",
-    "categoria": "organizacao"
-  },
-  {
-    "nome": "Kit 4 potes herméticos com tampa de bambu",
-    "chamada": "Cozinha organizada e com cara de revista",
-    "preco": "39,99",
-    "img": "img/potes.webp",
-    "link": "https://s.shopee.com.br/4VdXLBXQ8Z",
-    "selo": "+9 mil vendidos",
-    "categoria": "cozinha"
+    "categoria": "organizacao",
+    "shopId": "1007375842",
+    "itemId": "22898052964"
   },
   {
     "nome": "Carregador portátil 10.000mAh com cabo embutido",
@@ -82,6 +91,8 @@ window.PRODUTOS = [
     "img": "img/powerbank.webp",
     "link": "https://s.shopee.com.br/3B89jsOqSq",
     "selo": "+20 mil vendidos",
-    "categoria": "tecnologia"
+    "categoria": "tecnologia",
+    "shopId": "406969593",
+    "itemId": "22498946021"
   }
 ];
