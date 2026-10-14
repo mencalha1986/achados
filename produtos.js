@@ -33,14 +33,6 @@ window.PRODUTOS = [
     "selo": "🔥 +3 mil vendidos"
   },
   {
-    "nome": "Ampliador de tela 3D para celular",
-    "chamada": "Transforme o celular numa telona",
-    "preco": "16,99",
-    "img": "img/lupa.webp",
-    "link": "https://s.shopee.com.br/AAHu8dfQke",
-    "selo": "🔥 +80 mil vendidos"
-  },
-  {
     "nome": "Carregador portátil 10.000mAh com cabo embutido",
     "chamada": "Nunca mais fique com 0% de bateria",
     "preco": "31,99",
@@ -55,5 +47,13 @@ window.PRODUTOS = [
     "img": "img/fios.webp",
     "link": "https://s.shopee.com.br/4fwz2Mh2S9",
     "selo": "🔥 +1 mil vendidos/mês"
+  },
+  {
+    "nome": "Ampliador de tela 3D para celular",
+    "chamada": "Transforme o celular numa telona (ótimo presente de Natal!)",
+    "preco": "16,99",
+    "img": "img/lupa2.webp",
+    "link": "https://s.shopee.com.br/AAHu8dfQke",
+    "selo": "🔥 +80 mil vendidos"
   }
 ];
