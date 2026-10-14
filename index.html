@@ -42,8 +42,10 @@
   .featured .f-img img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
   .featured .f-body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:10px}
   .kicker{display:inline-flex;align-self:flex-start;align-items:center;gap:6px;background:var(--yellow);color:var(--teal-dark);font-weight:900;font-size:12px;padding:5px 10px;border-radius:999px;letter-spacing:.3px;text-transform:uppercase}
+  .featured .f-body{position:relative}
+  @media (max-width:759px){.seal{width:84px;height:84px;top:10px;right:6px}.seal span{font-size:9.5px}.seal span b{font-size:17px}.is-top .f-body h2{padding-right:92px}}
   .featured.is-top{border:3px solid var(--yellow);box-shadow:0 0 0 6px rgba(255,216,102,.28),0 14px 38px rgba(10,59,74,.2)}
-  .seal{position:absolute;top:12px;right:12px;width:118px;height:118px;display:grid;place-items:center;text-align:center;color:var(--teal-dark);transform:rotate(-12deg);animation:seal 2.6s ease-in-out infinite;filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
+  .seal{position:absolute;z-index:2;top:12px;right:12px;width:118px;height:118px;display:grid;place-items:center;text-align:center;color:var(--teal-dark);transform:rotate(-12deg);animation:seal 2.6s ease-in-out infinite;filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
   .seal::before{content:"";position:absolute;inset:0;background:var(--yellow);clip-path:polygon(50% 0%,59% 10%,71% 4%,75% 16%,88% 15%,86% 28%,97% 33%,91% 45%,100% 54%,90% 62%,95% 74%,83% 77%,82% 90%,70% 88%,63% 99%,52% 92%,41% 100%,35% 89%,22% 92%,20% 79%,7% 76%,11% 64%,0% 56%,8% 46%,2% 34%,14% 29%,12% 16%,25% 16%,29% 4%,41% 10%)}
   .seal span{position:relative;font-weight:900;line-height:1.02;font-size:12px;letter-spacing:.3px;text-transform:uppercase}
   .seal span b{display:block;font-size:22px;letter-spacing:-.3px}
@@ -166,8 +168,8 @@
   const veio = pid && d && d.itemId === pid;
   if (d) document.getElementById('destaque').innerHTML = `
     <a class="featured${veio ? '' : ' is-top'}" href="${esc(d.link)}" target="_blank" rel="noopener sponsored">
-      <div class="f-img"><img src="${esc(d.img)}" alt="${esc(d.nome)}">${veio ? '' : '<div class="seal"><span>⭐<b>Top 1</b>da semana</span></div>'}</div>
-      <div class="f-body">
+      <div class="f-img"><img src="${esc(d.img)}" alt="${esc(d.nome)}"></div>
+      <div class="f-body">${veio ? '' : '<div class="seal"><span>⭐<b>Top 1</b>da semana</span></div>'}
         <span class="kicker">${veio ? '🔎 Você veio ver este achado' : '🏆 Destaque da semana'}</span>
         <h2>${esc(d.chamada)}</h2>
         <p>${esc(d.descricao || d.nome)}</p>
