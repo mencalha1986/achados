@@ -3,69 +3,197 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Achados Úteis Por Aí</title>
-<meta name="description" content="Achados úteis garimpados a dedo, bem avaliados e baratos.">
+<title>Achados Úteis Por Aí | Achados úteis e baratos</title>
+<meta name="description" content="Achados úteis garimpados a dedo: tecnologia, cozinha, organização e limpeza. Produtos bem avaliados e baratos, com compra direto na Shopee.">
 <link rel="icon" href="img/logo.png">
 <meta property="og:title" content="Achados Úteis Por Aí">
-<meta property="og:image" content="img/logo.png">
+<meta property="og:description" content="Achados úteis garimpados a dedo, bem avaliados e baratos.">
+<meta property="og:image" content="https://achadosuteisporai.com.br/img/logo.png">
+<meta property="og:url" content="https://achadosuteisporai.com.br/">
+<meta name="theme-color" content="#0A3B4A">
 <style>
-  :root{--bg1:#0F5E63;--bg2:#0A3B4A;--mint:#7EE8C8;--yellow:#FFD866;--cream:#F4F1E8;--ink:#0A3B4A}
+  :root{
+    --teal:#0F5E63;--teal-dark:#0A3B4A;--mint:#7EE8C8;--mint-soft:#E3F8F1;--yellow:#FFD866;
+    --bg:#F3F6F5;--card:#FFFFFF;--ink:#14272D;--muted:#5F7177;--line:#E1E8E6;--radius:18px
+  }
   *{box-sizing:border-box}
-  body{margin:0;min-height:100vh;font-family:system-ui,'Segoe UI',Roboto,Arial,sans-serif;color:var(--cream);
-    background:linear-gradient(165deg,var(--bg1),var(--bg2)) fixed}
-  .wrap{max-width:520px;margin:0 auto;padding:28px 16px 40px}
-  header{text-align:center;margin-bottom:22px}
-  header img{width:96px;height:96px;border-radius:50%;border:3px solid var(--mint)}
-  h1{font-size:24px;margin:10px 0 4px;font-weight:900}
-  header p{margin:0;opacity:.85;font-size:15px}
-  .tag{display:inline-block;margin-top:12px;background:var(--mint);color:var(--ink);font-weight:800;font-size:13px;padding:6px 14px;border-radius:30px}
-  /* vitrine: 2 colunas no celular, 3 no computador */
-  #lista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  @media (min-width:720px){.wrap{max-width:900px}#lista{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
-  .card{display:flex;flex-direction:column;background:rgba(255,255,255,.08);border:2px solid rgba(126,232,200,.35);
-    border-radius:18px;padding:8px;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s;position:relative}
-  .card:active,.card:hover{transform:scale(.98);border-color:var(--mint)}
-  .card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;background:#fff;display:block}
-  .info{display:flex;flex-direction:column;flex:1;padding:8px 2px 2px}
-  .info b{font-size:14px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-  .info small{opacity:.75;font-size:11.5px;margin-top:4px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .row{display:flex;flex-direction:column;gap:6px;margin-top:auto;padding-top:8px}
-  .price{align-self:flex-start;background:var(--yellow);color:var(--ink);font-weight:900;padding:3px 9px;border-radius:9px;font-size:15px;white-space:nowrap}
-  .go{background:var(--mint);color:var(--ink);font-weight:900;padding:8px 6px;border-radius:11px;font-size:13.5px;text-align:center}
-  .card.new{border-color:var(--yellow)}
-  .new-badge{position:absolute;top:14px;left:14px;background:var(--yellow);color:var(--ink);font-size:11px;font-weight:900;padding:3px 8px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.25)}
-  footer{text-align:center;font-size:12px;opacity:.6;margin-top:26px;line-height:1.5}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .container{max-width:1080px;margin:0 auto;padding:0 16px}
+
+  /* topo */
+  .top{background:linear-gradient(160deg,var(--teal),var(--teal-dark));color:#F4F1E8;padding:22px 0 64px}
+  .brand{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand-id{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand-id img{width:52px;height:52px;border-radius:50%;border:2px solid var(--mint)}
+  .brand-id b{display:block;font-size:18px;font-weight:900;letter-spacing:-.2px}
+  .brand-id small{display:block;font-size:12.5px;opacity:.8}
+  .ig-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--teal-dark);text-decoration:none;font-weight:800;font-size:14px;padding:10px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+  .ig-btn svg{width:18px;height:18px}
+  .hero{margin-top:26px;max-width:620px}
+  .hero h1{font-size:clamp(26px,6vw,38px);line-height:1.08;margin:0 0 10px;font-weight:900;letter-spacing:-.5px}
+  .hero h1 em{font-style:normal;color:var(--yellow)}
+  .hero p{margin:0;font-size:15.5px;opacity:.88;line-height:1.5}
+
+  /* destaque */
+  .featured{margin-top:-44px;background:var(--card);border-radius:22px;box-shadow:0 12px 34px rgba(10,59,74,.14);display:grid;grid-template-columns:1fr;overflow:hidden;text-decoration:none;border:1px solid var(--line)}
+  .featured .f-img{position:relative;background:#fff}
+  .featured .f-img img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+  .featured .f-body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:10px}
+  .kicker{display:inline-flex;align-self:flex-start;align-items:center;gap:6px;background:var(--yellow);color:var(--teal-dark);font-weight:900;font-size:12px;padding:5px 10px;border-radius:999px;letter-spacing:.3px;text-transform:uppercase}
+  .featured h2{margin:0;font-size:22px;line-height:1.15;font-weight:900}
+  .featured p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.5}
+  .f-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:4px}
+  .price-lg{font-size:28px;font-weight:900;color:var(--teal-dark)}
+  .price-lg small{font-size:14px;font-weight:700;color:var(--muted);margin-right:4px}
+  .badge{font-size:12px;font-weight:800;color:var(--teal);background:var(--mint-soft);padding:5px 9px;border-radius:8px}
+  .cta{display:block;text-align:center;background:var(--teal);color:#fff;font-weight:900;font-size:15.5px;padding:14px;border-radius:14px;margin-top:6px}
+  @media (min-width:760px){.featured{grid-template-columns:1fr 1fr}.featured .f-body{padding:30px;justify-content:center}.featured h2{font-size:28px}}
+
+  /* confiança */
+  .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0 6px}
+  .trust div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 10px;text-align:center;font-size:12.5px;color:var(--muted);line-height:1.35}
+  .trust b{display:block;font-size:20px;margin-bottom:4px}
+
+  /* filtros */
+  .filters-wrap{position:sticky;top:0;z-index:5;background:rgba(243,246,245,.94);backdrop-filter:blur(8px);margin:14px -16px 0;padding:10px 16px;border-bottom:1px solid var(--line)}
+  .filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+  .filters::-webkit-scrollbar{display:none}
+  .chip{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-weight:800;font-size:13.5px;padding:9px 14px;border-radius:999px;cursor:pointer}
+  .chip[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+
+  /* seções e grade */
+  section.cat{margin-top:22px}
+  section.cat h3{display:flex;align-items:center;gap:8px;font-size:18px;margin:0 0 12px;font-weight:900}
+  section.cat h3 span{font-size:12px;font-weight:800;color:var(--muted);background:var(--card);border:1px solid var(--line);padding:3px 8px;border-radius:999px}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  @media (min-width:760px){.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}}
+  .card{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-decoration:none;transition:transform .15s,box-shadow .15s}
+  .card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(10,59,74,.10)}
+  .card img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#fff}
+  .c-body{display:flex;flex-direction:column;gap:6px;padding:10px 10px 12px;flex:1}
+  .c-body b{font-size:14px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .c-body small{font-size:11.5px;color:var(--muted);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .c-foot{margin-top:auto;display:flex;flex-direction:column;gap:7px;padding-top:4px}
+  .c-price{display:flex;align-items:baseline;justify-content:space-between;gap:6px}
+  .c-price strong{font-size:18px;font-weight:900;color:var(--teal-dark)}
+  .c-tag{position:absolute;top:8px;left:8px;font-size:10.5px;font-weight:900;color:var(--teal-dark);background:var(--yellow);padding:4px 7px;border-radius:7px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  .c-btn{text-align:center;background:var(--teal);color:#fff;font-weight:900;font-size:13.5px;padding:9px 6px;border-radius:11px}
+  .hidden{display:none}
+
+  /* instagram */
+  .ig-box{margin:34px 0 0;background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#F4F1E8;border-radius:22px;padding:24px 20px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+  .ig-box h4{margin:0;font-size:20px;font-weight:900}
+  .ig-box p{margin:0;opacity:.88;font-size:14.5px;line-height:1.5}
+
+  footer{color:var(--muted);font-size:12px;text-align:center;line-height:1.6;padding:28px 16px 40px}
+  footer a{font-weight:800;color:var(--teal)}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <img src="img/logo.png" alt="Achados Úteis Por Aí">
-    <h1>Achados Úteis Por Aí</h1>
-    <p>Achados úteis garimpados a dedo, que cabem no bolso 💸</p>
-    <span class="tag">👇 Toque no produto pra comprar</span>
-  </header>
-  <main id="lista"></main>
-  <footer>
-    Preços podem mudar. Confira na loja antes de comprar.<br>
-    Alguns links são de afiliado: você paga o mesmo e eu ganho uma pequena comissão 💚<br>
-    @achadosuteisporai
-  </footer>
-</div>
+
+<header class="top">
+  <div class="container">
+    <div class="brand">
+      <a class="brand-id" href="./">
+        <img src="img/logo.png" alt="">
+        <span><b>Achados Úteis Por Aí</b><small>Garimpados a dedo, bem avaliados e baratos</small></span>
+      </a>
+      <a class="ig-btn" href="https://instagram.com/achadosuteisporai" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        Seguir
+      </a>
+    </div>
+    <div class="hero">
+      <h1>Coisas <em>úteis</em> que cabem no bolso</h1>
+      <p>A gente garimpa produtos baratos e com milhares de vendas pra facilitar o seu dia a dia. Toque no produto e compre direto na Shopee.</p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div id="destaque"></div>
+
+  <div class="trust">
+    <div><b>🛒</b>Compra feita direto na Shopee</div>
+    <div><b>⭐</b>Só produtos bem avaliados</div>
+    <div><b>💸</b>Preços que cabem no bolso</div>
+  </div>
+
+  <div class="filters-wrap">
+    <div class="filters" id="filtros" role="toolbar" aria-label="Filtrar por categoria"></div>
+  </div>
+
+  <div id="secoes"></div>
+
+  <div class="ig-box">
+    <h4>📲 Achados novos toda semana</h4>
+    <p>Siga no Instagram pra ver os vídeos dos produtos. Comenta "QUERO" em qualquer post que a gente manda o link no seu direct.</p>
+    <a class="ig-btn" href="https://instagram.com/achadosuteisporai" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+      @achadosuteisporai
+    </a>
+  </div>
+</main>
+
+<footer>
+  Preços e disponibilidade podem mudar. Confira na loja antes de comprar.<br>
+  Alguns links são de afiliado: você paga o mesmo preço e a gente recebe uma pequena comissão, que ajuda a manter o garimpo 💚<br>
+  <a href="https://instagram.com/achadosuteisporai" target="_blank" rel="noopener">@achadosuteisporai</a> · achadosuteisporai.com.br
+</footer>
+
 <script src="produtos.js"></script>
 <script>
-  (itens => {
-    document.getElementById('lista').innerHTML = itens.slice().reverse().map((p, i) => `
-      <a class="card${i === 0 ? ' new' : ''}" href="${p.link}" target="_blank" rel="noopener sponsored">
-        <img src="${p.img}" alt="" loading="lazy">
-        <div class="info">
-          ${i === 0 ? '<span class="new-badge">NOVO</span>' : ''}
-          <b>${p.chamada}</b>
-          <small>${p.nome}</small>
-          <div class="row"><span class="price">R$ ${p.preco}</span><span class="go">Ver oferta →</span></div>
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const P = window.PRODUTOS, C = window.CATEGORIAS;
+
+  // destaque
+  const d = P.find(p => p.destaque);
+  if (d) document.getElementById('destaque').innerHTML = `
+    <a class="featured" href="${esc(d.link)}" target="_blank" rel="noopener sponsored">
+      <div class="f-img"><img src="${esc(d.img)}" alt="${esc(d.nome)}"></div>
+      <div class="f-body">
+        <span class="kicker">⭐ Destaque da semana</span>
+        <h2>${esc(d.chamada)}</h2>
+        <p>${esc(d.descricao || d.nome)}</p>
+        <div class="f-row"><span class="price-lg"><small>por</small>R$ ${esc(d.preco)}</span>${d.selo ? `<span class="badge">🔥 ${esc(d.selo)}</span>` : ''}</div>
+        <span class="cta">Ver oferta na Shopee →</span>
+      </div>
+    </a>`;
+
+  // seções por categoria
+  const card = p => `
+    <a class="card" href="${esc(p.link)}" target="_blank" rel="noopener sponsored">
+      ${p.selo ? `<span class="c-tag">🔥 ${esc(p.selo)}</span>` : ''}<img src="${esc(p.img)}" alt="${esc(p.nome)}" loading="eager">
+      <div class="c-body">
+        <b>${esc(p.chamada)}</b>
+        <small>${esc(p.nome)}</small>
+        <div class="c-foot">
+          <div class="c-price"><strong>R$ ${esc(p.preco)}</strong></div>
+          <span class="c-btn">Ver oferta</span>
         </div>
-      </a>`).join('');
-  })(window.PRODUTOS);
+      </div>
+    </a>`;
+  document.getElementById('secoes').innerHTML = C.map(c => {
+    const itens = P.filter(p => p.categoria === c.id && !p.destaque);
+    if (!itens.length) return '';
+    return `<section class="cat" data-cat="${c.id}">
+      <h3>${c.icone} ${esc(c.nome)} <span>${itens.length}</span></h3>
+      <div class="grid">${itens.map(card).join('')}</div>
+    </section>`;
+  }).join('');
+
+  // filtros
+  const usadas = C.filter(c => P.some(p => p.categoria === c.id && !p.destaque));
+  const filtros = document.getElementById('filtros');
+  filtros.innerHTML = [`<button class="chip" data-f="todos" aria-pressed="true">Todos</button>`]
+    .concat(usadas.map(c => `<button class="chip" data-f="${c.id}" aria-pressed="false">${c.icone} ${esc(c.nome)}</button>`)).join('');
+  filtros.addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    filtros.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', x === b));
+    document.querySelectorAll('section.cat').forEach(s => s.classList.toggle('hidden', b.dataset.f !== 'todos' && s.dataset.cat !== b.dataset.f));
+  });
 </script>
 </body>
 </html>
