@@ -152,12 +152,13 @@
   document.getElementById('conferido').textContent = window.PRECOS_CONFERIDOS_EM || '';
 
   // destaque
-  const d = P.find(p => p.destaque);
+  const pid = new URLSearchParams(location.search).get('p');
+  const d = (pid && P.find(p => p.itemId === pid)) || P.find(p => p.destaque);
   if (d) document.getElementById('destaque').innerHTML = `
     <a class="featured" href="${esc(d.link)}" target="_blank" rel="noopener sponsored">
       <div class="f-img"><img src="${esc(d.img)}" alt="${esc(d.nome)}"></div>
       <div class="f-body">
-        <span class="kicker">⭐ Destaque da semana</span>
+        <span class="kicker">${pid && d.itemId === pid ? '🔎 Você veio ver este achado' : '⭐ Destaque da semana'}</span>
         <h2>${esc(d.chamada)}</h2>
         <p>${esc(d.descricao || d.nome)}</p>
         <div class="f-row"><span class="price-lg"><small>${d.aPartir ? 'a partir de' : 'por'}</small>R$ ${esc(d.preco)}</span>${d.selo ? `<span class="badge">🔥 ${esc(d.selo)}</span>` : ''}</div>
@@ -179,7 +180,7 @@
       </div>
     </a>`;
   document.getElementById('secoes').innerHTML = C.map(c => {
-    const itens = P.filter(p => p.categoria === c.id && !p.destaque);
+    const itens = P.filter(p => p.categoria === c.id && p !== d);
     if (!itens.length) return '';
     return `<section class="cat" data-cat="${c.id}">
       <h3>${c.icone} ${esc(c.nome)} <span>${itens.length}</span></h3>
@@ -188,7 +189,7 @@
   }).join('');
 
   // filtros
-  const usadas = C.filter(c => P.some(p => p.categoria === c.id && !p.destaque));
+  const usadas = C.filter(c => P.some(p => p.categoria === c.id && p !== d));
   const filtros = document.getElementById('filtros');
   filtros.innerHTML = [`<button class="chip" data-f="todos" aria-pressed="true">Todos</button>`]
     .concat(usadas.map(c => `<button class="chip" data-f="${c.id}" aria-pressed="false">${c.icone} ${esc(c.nome)}</button>`)).join('');
