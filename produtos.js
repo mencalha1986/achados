@@ -27,6 +27,52 @@ window.PRODUTOS = [
     "itemId": "14241654483"
   },
   {
+    "nome": "Suporte de parede multifuncional (celular e controle)",
+    "chamada": "Celular carregando sem ficar no chão",
+    "preco": "9,90",
+    "img": "img/suporte1.webp",
+    "link": "https://s.shopee.com.br/6VOdV4FaxG",
+    "selo": "+100 mil vendidos",
+    "categoria": "organizacao",
+    "shopId": "832040275",
+    "itemId": "23096150316",
+    "aPartir": true
+  },
+  {
+    "nome": "Organizador de pia com porta-pano e ganchos",
+    "chamada": "Pia organizada sem furar nada",
+    "preco": "21,90",
+    "img": "img/pia1.webp",
+    "link": "https://s.shopee.com.br/6fi3hOVwwo",
+    "selo": "+1 mil vendidos",
+    "categoria": "organizacao",
+    "shopId": "988030305",
+    "itemId": "22198885114"
+  },
+  {
+    "nome": "Organizador giratório 360° multiuso",
+    "chamada": "Pega tudo sem bagunçar o armário",
+    "preco": "29,90",
+    "img": "img/girat1.webp",
+    "link": "https://s.shopee.com.br/7KxkUbpoUl",
+    "selo": "+2 mil vendidos",
+    "categoria": "organizacao",
+    "shopId": "969488461",
+    "itemId": "47511766124"
+  },
+  {
+    "nome": "Kit 7 organizadores de gaveta em acrílico",
+    "chamada": "Gaveta bagunçada nunca mais",
+    "preco": "24,90",
+    "img": "img/gaveta1.webp",
+    "link": "https://s.shopee.com.br/2BFeL8Qg6S",
+    "selo": "+2 mil vendidos",
+    "categoria": "organizacao",
+    "shopId": "455996615",
+    "itemId": "21859949673",
+    "aPartir": true
+  },
+  {
     "nome": "Mini processador sem fio 250ml",
     "chamada": "Pica alho e cebola em 5 segundos",
     "preco": "23,88",
