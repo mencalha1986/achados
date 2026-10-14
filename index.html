@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Achados Úteis Por Aí</title>
-<meta name="description" content="Achados úteis, testados e aprovados, que cabem no bolso.">
+<meta name="description" content="Achados úteis garimpados a dedo, bem avaliados e baratos.">
 <link rel="icon" href="img/logo.png">
 <meta property="og:title" content="Achados Úteis Por Aí">
 <meta property="og:image" content="img/logo.png">
@@ -19,18 +19,21 @@
   h1{font-size:24px;margin:10px 0 4px;font-weight:900}
   header p{margin:0;opacity:.85;font-size:15px}
   .tag{display:inline-block;margin-top:12px;background:var(--mint);color:var(--ink);font-weight:800;font-size:13px;padding:6px 14px;border-radius:30px}
-  .card{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.08);border:2px solid rgba(126,232,200,.35);
-    border-radius:20px;padding:12px;margin:14px 0;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s}
-  .card:active,.card:hover{transform:scale(.985);border-color:var(--mint)}
-  .card img{width:96px;height:96px;object-fit:cover;border-radius:14px;background:#fff;flex:none}
-  .info{flex:1;min-width:0}
-  .info b{display:block;font-size:16px;line-height:1.25}
-  .info small{display:block;opacity:.8;font-size:13px;margin-top:3px}
-  .row{display:flex;align-items:center;justify-content:space-between;margin-top:8px;gap:8px}
-  .price{background:var(--yellow);color:var(--ink);font-weight:900;padding:4px 10px;border-radius:10px;font-size:15px;white-space:nowrap}
-  .go{background:var(--mint);color:var(--ink);font-weight:900;padding:6px 12px;border-radius:12px;font-size:14px;white-space:nowrap}
+  /* vitrine: 2 colunas no celular, 3 no computador */
+  #lista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  @media (min-width:720px){.wrap{max-width:900px}#lista{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
+  .card{display:flex;flex-direction:column;background:rgba(255,255,255,.08);border:2px solid rgba(126,232,200,.35);
+    border-radius:18px;padding:8px;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s;position:relative}
+  .card:active,.card:hover{transform:scale(.98);border-color:var(--mint)}
+  .card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;background:#fff;display:block}
+  .info{display:flex;flex-direction:column;flex:1;padding:8px 2px 2px}
+  .info b{font-size:14px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .info small{opacity:.75;font-size:11.5px;margin-top:4px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .row{display:flex;flex-direction:column;gap:6px;margin-top:auto;padding-top:8px}
+  .price{align-self:flex-start;background:var(--yellow);color:var(--ink);font-weight:900;padding:3px 9px;border-radius:9px;font-size:15px;white-space:nowrap}
+  .go{background:var(--mint);color:var(--ink);font-weight:900;padding:8px 6px;border-radius:11px;font-size:13.5px;text-align:center}
   .card.new{border-color:var(--yellow)}
-  .new-badge{display:inline-block;background:var(--yellow);color:var(--ink);font-size:11px;font-weight:900;padding:2px 8px;border-radius:8px;margin-bottom:4px}
+  .new-badge{position:absolute;top:14px;left:14px;background:var(--yellow);color:var(--ink);font-size:11px;font-weight:900;padding:3px 8px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.25)}
   footer{text-align:center;font-size:12px;opacity:.6;margin-top:26px;line-height:1.5}
 </style>
 </head>
@@ -39,7 +42,7 @@
   <header>
     <img src="img/logo.png" alt="Achados Úteis Por Aí">
     <h1>Achados Úteis Por Aí</h1>
-    <p>Achados testados e aprovados, que cabem no bolso 💸</p>
+    <p>Achados úteis garimpados a dedo, que cabem no bolso 💸</p>
     <span class="tag">👇 Toque no produto pra comprar</span>
   </header>
   <main id="lista"></main>
