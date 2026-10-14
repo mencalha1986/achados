@@ -185,5 +185,63 @@ window.PRODUTOS = [
     "categoria": "tecnologia",
     "shopId": "406969593",
     "itemId": "22498946021"
+  },
+  {
+    "nome": "Removedor de bolinhas de roupa",
+    "chamada": "Roupa com bolinha fica nova de novo",
+    "preco": "14,99",
+    "img": "img/bolinhas.webp",
+    "link": "https://s.shopee.com.br/2BFecQXgfv",
+    "selo": "+9 mil vendidos",
+    "categoria": "limpeza",
+    "shopId": "569114904",
+    "itemId": "19098542872"
+  },
+  {
+    "nome": "Bomba elétrica para galão de água",
+    "chamada": "Água do galão sem esforço",
+    "preco": "19,59",
+    "img": "img/bomba.webp",
+    "link": "https://s.shopee.com.br/Lo0R3efOa",
+    "selo": "+9 mil vendidos",
+    "categoria": "cozinha",
+    "shopId": "832036467",
+    "itemId": "19370925521",
+    "aPartir": true
+  },
+  {
+    "nome": "Luminária LED 60cm com sensor de movimento",
+    "chamada": "Acende sozinha quando você chega",
+    "preco": "30,99",
+    "img": "img/luz.webp",
+    "link": "https://s.shopee.com.br/W7QdMe23d",
+    "selo": "+9 mil vendidos",
+    "categoria": "organizacao",
+    "shopId": "1284751573",
+    "itemId": "23793405864"
+  },
+  {
+    "nome": "Luva removedora de pelos de pet",
+    "chamada": "Pelo de pet sai na hora",
+    "preco": "21,95",
+    "img": "img/luva.webp",
+    "link": "https://s.shopee.com.br/1BA2Rfw4Y",
+    "selo": "Nota 4,8",
+    "categoria": "limpeza",
+    "shopId": "1323203204",
+    "itemId": "58254858171",
+    "aPartir": true
+  },
+  {
+    "nome": "Borrifador de azeite em vidro (air fryer)",
+    "chamada": "Azeite na medida na air fryer",
+    "preco": "14,99",
+    "img": "img/borrifador.webp",
+    "link": "https://s.shopee.com.br/BUaEkfIjb",
+    "selo": "Nota 4,8",
+    "categoria": "cozinha",
+    "shopId": "1755527079",
+    "itemId": "58218870510",
+    "aPartir": true
   }
 ];
