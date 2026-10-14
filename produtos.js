@@ -47,5 +47,13 @@ window.PRODUTOS = [
     "img": "img/powerbank.webp",
     "link": "https://s.shopee.com.br/3B89jsOqSq",
     "selo": "🔥 +20 mil vendidos"
+  },
+  {
+    "nome": "Kit clips organizadores de fios autoadesivos",
+    "chamada": "Chega de fio bagunçado atrás dos móveis",
+    "preco": "11,48",
+    "img": "img/fios.webp",
+    "link": "https://s.shopee.com.br/4fwz2Mh2S9",
+    "selo": "🔥 +1 mil vendidos/mês"
   }
 ];
