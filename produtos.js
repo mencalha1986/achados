@@ -1,4 +1,4 @@
-window.PRECOS_CONFERIDOS_EM = "14/10/2026";
+window.PRECOS_CONFERIDOS_EM = "15/10/2026";
 // Produtos do site achadosuteisporai.com.br
 // - categoria: "tecnologia" | "cozinha" | "organizacao" | "limpeza"
 // - destaque: true no produto que aparece grande no topo (só um)
@@ -59,7 +59,7 @@ window.PRODUTOS = [
     "preco": "21,90",
     "img": "img/pia1.webp",
     "link": "https://s.shopee.com.br/6fi3hOVwwo",
-    "selo": "+1 mil vendidos",
+    "selo": "+20 mil vendidos",
     "categoria": "organizacao",
     "shopId": "988030305",
     "itemId": "22198885114"
@@ -70,7 +70,7 @@ window.PRODUTOS = [
     "preco": "29,90",
     "img": "img/girat1.webp",
     "link": "https://s.shopee.com.br/7KxkUbpoUl",
-    "selo": "+2 mil vendidos",
+    "selo": "+10 mil vendidos",
     "categoria": "organizacao",
     "shopId": "969488461",
     "itemId": "47511766124"
@@ -81,7 +81,7 @@ window.PRODUTOS = [
     "preco": "24,90",
     "img": "img/gaveta1.webp",
     "link": "https://s.shopee.com.br/2BFeL8Qg6S",
-    "selo": "+2 mil vendidos",
+    "selo": "+10 mil vendidos",
     "categoria": "organizacao",
     "shopId": "455996615",
     "itemId": "21859949673",
@@ -93,7 +93,7 @@ window.PRODUTOS = [
     "preco": "23,88",
     "img": "img/proc1.webp",
     "link": "https://s.shopee.com.br/AKbM2iw8y3",
-    "selo": "+3 mil vendidos",
+    "selo": "+100 mil vendidos",
     "categoria": "cozinha",
     "shopId": "832036467",
     "itemId": "18931705150"
@@ -104,7 +104,7 @@ window.PRODUTOS = [
     "preco": "18,69",
     "img": "img/mixer2.webp",
     "link": "https://s.shopee.com.br/3B8BVXo5i0",
-    "selo": "+10 mil vendidos",
+    "selo": "+200 mil vendidos",
     "categoria": "cozinha",
     "shopId": "415175805",
     "itemId": "22392992790"
@@ -115,7 +115,7 @@ window.PRODUTOS = [
     "preco": "29,98",
     "img": "img/ovos2.webp",
     "link": "https://s.shopee.com.br/6q1TsH14Ws",
-    "selo": "+10 mil vendidos",
+    "selo": "+60 mil vendidos",
     "categoria": "cozinha",
     "shopId": "1531826276",
     "itemId": "23199020709",
@@ -127,7 +127,7 @@ window.PRODUTOS = [
     "preco": "19,90",
     "img": "img/fati1.webp",
     "link": "https://s.shopee.com.br/6VOdTgjrkM",
-    "selo": "+6 mil vendidos",
+    "selo": "+90 mil vendidos",
     "categoria": "cozinha",
     "shopId": "386191827",
     "itemId": "11674191849"
@@ -149,7 +149,7 @@ window.PRODUTOS = [
     "preco": "11,48",
     "img": "img/fios.webp",
     "link": "https://s.shopee.com.br/4fwz2Mh2S9",
-    "selo": "+1 mil/mês",
+    "selo": "+2 mil vendidos",
     "categoria": "organizacao",
     "shopId": "1532748455",
     "itemId": "50113505774",
@@ -254,7 +254,7 @@ window.PRODUTOS = [
   {
     "nome": "Borrifador de azeite em vidro (air fryer)",
     "chamada": "Azeite na medida na air fryer",
-    "preco": "14,99",
+    "preco": "14,89",
     "img": "img/borrifador.webp",
     "link": "https://s.shopee.com.br/BUaEkfIjb",
     "selo": "Nota 4,8",
