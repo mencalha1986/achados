@@ -4,6 +4,7 @@ window.PRECOS_CONFERIDOS_EM = "14/10/2026";
 // - destaque: true no produto que aparece grande no topo (só um)
 // - aPartir: true quando o produto tem variações com preços diferentes (mostra "a partir de")
 // - shopId/itemId: código do anúncio na Shopee (usado pra atualizar preço automaticamente)
+// - novo: true mostra o selo "Novo" (produtos adicionados na semana)
 // - a ordem da lista é a ordem de exibição (mais novos primeiro)
 window.CATEGORIAS = [
   { id: "tecnologia",  nome: "Tecnologia",  icone: "📱" },
@@ -195,7 +196,8 @@ window.PRODUTOS = [
     "selo": "+9 mil vendidos",
     "categoria": "limpeza",
     "shopId": "569114904",
-    "itemId": "19098542872"
+    "itemId": "19098542872",
+    "novo": true
   },
   {
     "nome": "Bomba elétrica para galão de água",
@@ -207,6 +209,7 @@ window.PRODUTOS = [
     "categoria": "cozinha",
     "shopId": "832036467",
     "itemId": "19370925521",
+    "novo": true,
     "aPartir": true
   },
   {
@@ -218,7 +221,8 @@ window.PRODUTOS = [
     "selo": "+9 mil vendidos",
     "categoria": "organizacao",
     "shopId": "1284751573",
-    "itemId": "23793405864"
+    "itemId": "23793405864",
+    "novo": true
   },
   {
     "nome": "Luva removedora de pelos de pet",
@@ -230,6 +234,7 @@ window.PRODUTOS = [
     "categoria": "limpeza",
     "shopId": "1323203204",
     "itemId": "58254858171",
+    "novo": true,
     "aPartir": true
   },
   {
@@ -242,6 +247,7 @@ window.PRODUTOS = [
     "categoria": "cozinha",
     "shopId": "1755527079",
     "itemId": "58218870510",
+    "novo": true,
     "aPartir": true
   }
 ];

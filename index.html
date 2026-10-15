@@ -11,205 +11,346 @@
 <meta property="og:image" content="https://achadosuteisporai.com.br/img/logo.png">
 <meta property="og:url" content="https://achadosuteisporai.com.br/">
 <meta name="theme-color" content="#0A3B4A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --teal:#0F5E63;--teal-dark:#0A3B4A;--mint:#7EE8C8;--mint-soft:#E3F8F1;--yellow:#FFD866;
-    --bg:#F3F6F5;--card:#FFFFFF;--ink:#14272D;--muted:#5F7177;--line:#E1E8E6;--radius:18px
+    --teal:#0F5E63;--teal-dark:#0A3B4A;--teal-50:#EEF6F5;--mint:#7EE8C8;--yellow:#FFD866;--yellow-ink:#5C4500;
+    --bg:#F6F8F7;--card:#FFFFFF;--ink:#13262C;--muted:#5D6F75;--line:#E3E9E7;--danger:#C2410C;
+    --r-lg:20px;--r-md:14px;--r-sm:10px;
+    --shadow-sm:0 1px 2px rgba(16,40,46,.06),0 1px 3px rgba(16,40,46,.06);
+    --shadow-md:0 8px 24px rgba(16,40,46,.10);
+    --font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
   a{color:inherit}
-  .container{max-width:1080px;margin:0 auto;padding:0 16px}
+  img{max-width:100%;display:block}
+  button,input,select{font:inherit;color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-  /* topo */
-  .top{background:linear-gradient(160deg,var(--teal),var(--teal-dark));color:#F4F1E8;padding:22px 0 64px}
-  .brand{display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .brand-id{display:flex;align-items:center;gap:12px;text-decoration:none}
-  .brand-id img{width:52px;height:52px;border-radius:50%;border:2px solid var(--mint)}
-  .brand-id b{display:block;font-size:18px;font-weight:900;letter-spacing:-.2px}
-  .brand-id small{display:block;font-size:12.5px;opacity:.8}
-  .ig-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--teal-dark);text-decoration:none;font-weight:800;font-size:14px;padding:10px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.18)}
-  .ig-btn svg{width:18px;height:18px}
-  .hero{margin-top:26px;max-width:620px}
-  .hero h1{font-size:clamp(26px,6vw,38px);line-height:1.08;margin:0 0 10px;font-weight:900;letter-spacing:-.5px}
+  /* ---------- topo ---------- */
+  .top{background:var(--teal-dark);background-image:radial-gradient(1200px 400px at 85% -10%,rgba(126,232,200,.18),transparent 60%),linear-gradient(160deg,var(--teal),var(--teal-dark));color:#F4F7F6;padding-bottom:72px}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+  .brand img{width:42px;height:42px;border-radius:50%;border:2px solid var(--mint);flex:none}
+  .brand b{display:block;font-size:16.5px;font-weight:800;letter-spacing:-.2px;white-space:nowrap}
+  .brand small{display:block;font-size:12px;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .btn-ig{display:inline-flex;align-items:center;gap:7px;background:#fff;color:var(--teal-dark);text-decoration:none;font-weight:700;font-size:13.5px;padding:9px 14px;border-radius:999px;white-space:nowrap;flex:none;transition:transform .15s}
+  .btn-ig:hover{transform:translateY(-1px)}
+  .btn-ig svg{width:17px;height:17px}
+  .hero{padding:26px 0 0;max-width:720px}
+  .brand span{min-width:0}
+  @media (max-width:440px){.brand small{display:none}}
+  .hero h1{font-size:clamp(27px,5.4vw,42px);line-height:1.08;letter-spacing:-.8px;margin:0 0 12px;font-weight:800}
   .hero h1 em{font-style:normal;color:var(--yellow)}
-  .hero p{margin:0;font-size:15.5px;opacity:.88;line-height:1.5}
+  .hero p{margin:0;font-size:15.5px;opacity:.85;max-width:540px}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;padding:0;list-style:none}
+  .pills li{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);padding:6px 11px;border-radius:999px}
+  .pills svg{width:15px;height:15px;color:var(--mint)}
 
-  /* destaque */
-  .featured{margin-top:-44px;background:var(--card);border-radius:22px;box-shadow:0 12px 34px rgba(10,59,74,.14);display:grid;grid-template-columns:1fr;overflow:hidden;text-decoration:none;border:1px solid var(--line)}
-  .featured .f-img{position:relative;background:#fff}
-  .featured .f-img img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
-  .featured .f-body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:10px}
-  .kicker{display:inline-flex;align-self:flex-start;align-items:center;gap:6px;background:var(--yellow);color:var(--teal-dark);font-weight:900;font-size:12px;padding:5px 10px;border-radius:999px;letter-spacing:.3px;text-transform:uppercase}
-  .featured .f-body{position:relative}
-  @media (max-width:759px){.seal{width:84px;height:84px;top:10px;right:6px}.seal span{font-size:9.5px}.seal span b{font-size:17px}.is-top .f-body h2{padding-right:92px}}
-  .featured.is-top{border:3px solid var(--yellow);box-shadow:0 0 0 6px rgba(255,216,102,.28),0 14px 38px rgba(10,59,74,.2)}
-  .seal{position:absolute;z-index:2;top:12px;right:12px;width:118px;height:118px;display:grid;place-items:center;text-align:center;color:var(--teal-dark);transform:rotate(-12deg);animation:seal 2.6s ease-in-out infinite;filter:drop-shadow(0 6px 10px rgba(0,0,0,.28))}
+  /* ---------- destaque ---------- */
+  #destaque{margin-top:-52px}
+  .feat{position:relative;display:grid;grid-template-columns:1fr;background:var(--card);border-radius:var(--r-lg);overflow:hidden;text-decoration:none;box-shadow:var(--shadow-md);border:1px solid var(--line)}
+  .feat.is-top{outline:3px solid var(--yellow);outline-offset:-3px}
+  .feat-media{background:#fff;aspect-ratio:1/1;max-height:440px;width:100%}
+  .feat-media img{width:100%;height:100%;object-fit:cover}
+  .feat-body{position:relative;padding:20px 18px 22px;display:flex;flex-direction:column;gap:10px}
+  .kicker{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--yellow);background:var(--teal-dark);padding:6px 12px;border-radius:999px}
+  .feat h2{margin:0;font-size:24px;line-height:1.15;letter-spacing:-.4px;font-weight:800}
+  .feat p{margin:0;color:var(--muted);font-size:15px}
+  .feat-price{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:2px}
+  .price{display:flex;align-items:baseline;gap:5px;font-weight:800;color:var(--teal-dark)}
+  .price small{font-size:12.5px;font-weight:600;color:var(--muted)}
+  .feat .price{font-size:30px;letter-spacing:-.5px}
+  .proof{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:700;color:var(--teal);background:var(--teal-50);padding:5px 10px;border-radius:999px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--teal);color:#fff;font-weight:700;font-size:15px;padding:14px 18px;border-radius:var(--r-md);transition:background .15s}
+  .btn svg{width:18px;height:18px;flex:none}
+  .feat:hover .btn{background:var(--teal-dark)}
+  .seal{position:absolute;top:-34px;right:14px;width:92px;height:92px;display:grid;place-items:center;text-align:center;color:var(--teal-dark);transform:rotate(-10deg);filter:drop-shadow(0 6px 10px rgba(0,0,0,.22));animation:seal 2.8s ease-in-out infinite;pointer-events:none}
   .seal::before{content:"";position:absolute;inset:0;background:var(--yellow);clip-path:polygon(50% 0%,59% 10%,71% 4%,75% 16%,88% 15%,86% 28%,97% 33%,91% 45%,100% 54%,90% 62%,95% 74%,83% 77%,82% 90%,70% 88%,63% 99%,52% 92%,41% 100%,35% 89%,22% 92%,20% 79%,7% 76%,11% 64%,0% 56%,8% 46%,2% 34%,14% 29%,12% 16%,25% 16%,29% 4%,41% 10%)}
-  .seal span{position:relative;font-weight:900;line-height:1.02;font-size:12px;letter-spacing:.3px;text-transform:uppercase}
-  .seal span b{display:block;font-size:22px;letter-spacing:-.3px}
-  @keyframes seal{0%,100%{transform:rotate(-12deg) scale(1)}50%{transform:rotate(-12deg) scale(1.08)}}
-  .is-top .kicker{font-size:14px;padding:7px 14px;background:var(--teal-dark);color:var(--yellow);box-shadow:0 3px 0 var(--yellow)}
-  @media (min-width:760px){.seal{width:140px;height:140px;top:18px;right:18px}.seal span{font-size:13.5px}.seal span b{font-size:26px}}
-  @media (prefers-reduced-motion:reduce){.seal{animation:none}}
-  .featured h2{margin:0;font-size:22px;line-height:1.15;font-weight:900}
-  .featured p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.5}
-  .f-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:4px}
-  .price-lg{font-size:28px;font-weight:900;color:var(--teal-dark)}
-  .price-lg small{font-size:14px;font-weight:700;color:var(--muted);margin-right:4px}
-  .badge{font-size:12px;font-weight:800;color:var(--teal);background:var(--mint-soft);padding:5px 9px;border-radius:8px}
-  .cta{display:block;text-align:center;background:var(--teal);color:#fff;font-weight:900;font-size:15.5px;padding:14px;border-radius:14px;margin-top:6px}
-  @media (min-width:760px){.featured{grid-template-columns:1fr 1fr}.featured .f-body{padding:30px;justify-content:center}.featured h2{font-size:28px}}
+  .seal span{position:relative;font-weight:800;line-height:1.02;font-size:10px;letter-spacing:.3px;text-transform:uppercase}
+  .seal b{display:block;font-size:19px;letter-spacing:-.3px}
+  @keyframes seal{0%,100%{transform:rotate(-10deg) scale(1)}50%{transform:rotate(-10deg) scale(1.06)}}
+  @media (min-width:780px){
+    .feat{grid-template-columns:1fr 1fr}
+    .feat-media{max-height:none;aspect-ratio:auto;min-height:420px}
+    .feat-body{padding:40px 40px;justify-content:center;gap:14px}
+    .feat h2{font-size:32px}
+    .seal{top:22px;right:22px;width:128px;height:128px}
+    .seal span{font-size:12.5px}.seal b{font-size:25px}
+    .feat .btn{align-self:flex-start;padding:15px 28px}
+  }
 
-  /* confiança */
-  .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0 6px}
-  .trust div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 10px;text-align:center;font-size:12.5px;color:var(--muted);line-height:1.35}
-  .trust b{display:block;font-size:20px;margin-bottom:4px}
-
-  /* filtros */
-  .filters-wrap{position:sticky;top:0;z-index:5;background:rgba(243,246,245,.94);backdrop-filter:blur(8px);margin:14px -16px 0;padding:10px 16px;border-bottom:1px solid var(--line)}
-  .filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
-  .filters::-webkit-scrollbar{display:none}
-  .chip{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-weight:800;font-size:13.5px;padding:9px 14px;border-radius:999px;cursor:pointer}
+  /* ---------- catálogo ---------- */
+  .catalog{margin-top:40px}
+  .cat-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:14px}
+  .cat-head h2{margin:0;font-size:22px;letter-spacing:-.4px;font-weight:800}
+  .cat-head p{margin:2px 0 0;color:var(--muted);font-size:13.5px}
+  .toolbar{position:sticky;top:0;z-index:10;background:rgba(246,248,247,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);margin:0 -16px;padding:10px 16px;border-bottom:1px solid transparent;transition:border-color .2s}
+  .toolbar.stuck{border-bottom-color:var(--line)}
+  .tb-row{display:flex;gap:8px;align-items:center}
+  .search{position:relative;flex:1;min-width:0}
+  .search svg{position:absolute;left:12px;top:50%;width:17px;height:17px;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+  .search input{width:100%;height:42px;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:0 12px 0 38px;font-size:15px;outline:none;transition:border-color .15s,box-shadow .15s}
+  .search input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(15,94,99,.15)}
+  .sort{height:42px;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:0 10px;font-size:14px;font-weight:600;cursor:pointer;max-width:46%}
+  .chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-top:10px;padding-bottom:2px}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--card);font-weight:600;font-size:13.5px;padding:8px 13px;border-radius:999px;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+  .chip:hover{border-color:#c9d6d3}
+  .chip span{font-size:11.5px;font-weight:700;color:var(--muted);background:var(--bg);border-radius:999px;padding:1px 7px}
   .chip[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#fff}
+  .chip[aria-pressed="true"] span{background:rgba(255,255,255,.18);color:#fff}
+  @media (min-width:780px){
+    .toolbar{display:flex;align-items:center;gap:12px;flex-direction:row-reverse}
+    .tb-row{flex:0 0 440px}
+    .chips{margin-top:0;flex:1}
+  }
 
-  /* seções e grade */
-  section.cat{margin-top:22px}
-  section.cat h3{display:flex;align-items:center;gap:8px;font-size:18px;margin:0 0 12px;font-weight:900}
-  section.cat h3 span{font-size:12px;font-weight:800;color:var(--muted);background:var(--card);border:1px solid var(--line);padding:3px 8px;border-radius:999px}
-  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  @media (min-width:760px){.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}}
-  .card{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-decoration:none;transition:transform .15s,box-shadow .15s}
-  .card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(10,59,74,.10)}
-  .card img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#fff}
-  .c-body{display:flex;flex-direction:column;gap:6px;padding:10px 10px 12px;flex:1}
-  .c-body b{font-size:14px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .c-body small{font-size:11.5px;color:var(--muted);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .c-foot{margin-top:auto;display:flex;flex-direction:column;gap:7px;padding-top:4px}
-  .c-price{display:flex;align-items:baseline;justify-content:space-between;gap:6px}
-  .c-price{flex-direction:column;align-items:flex-start;gap:0}
-  .c-price .from{font-size:10.5px;color:var(--muted);font-weight:700}
-  .c-price strong{font-size:18px;font-weight:900;color:var(--teal-dark)}
-  .c-tag{position:absolute;top:8px;left:8px;font-size:10.5px;font-weight:900;color:var(--teal-dark);background:var(--yellow);padding:4px 7px;border-radius:7px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
-  .c-btn{text-align:center;background:var(--teal);color:#fff;font-weight:900;font-size:13.5px;padding:9px 6px;border-radius:11px}
-  .hidden{display:none}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+  @media (min-width:640px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
+  @media (min-width:980px){.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}}
+  .card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;text-decoration:none;box-shadow:var(--shadow-sm);transition:transform .18s,box-shadow .18s,border-color .18s}
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:#d5e0dd}
+  .c-media{position:relative;aspect-ratio:1/1;background:#fff;overflow:hidden}
+  .c-media img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+  .card:hover .c-media img{transform:scale(1.04)}
+  .c-flags{position:absolute;top:8px;left:8px;right:8px;display:flex;justify-content:space-between;gap:6px;pointer-events:none}
+  .flag{font-size:11px;font-weight:700;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.94);color:var(--teal-dark);box-shadow:0 1px 4px rgba(0,0,0,.12);white-space:nowrap}
+  .flag.new{background:var(--teal);color:#fff}
+  .c-body{display:flex;flex-direction:column;gap:4px;padding:12px 12px 14px;flex:1}
+  .c-cat{font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--teal)}
+  .c-body h3{margin:0;font-size:14.5px;line-height:1.3;font-weight:700;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.6em}
+  .c-body p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.7em}
+  .c-foot{margin-top:auto;padding-top:8px;display:flex;flex-direction:column;gap:10px}
+  .c-foot .price{font-size:19px;flex-wrap:wrap;column-gap:5px;row-gap:0}
+  .c-foot .price small{flex-basis:100%;font-size:11px;line-height:1.2}
+  .c-foot .price small:empty{display:none}
+  .c-btn{display:flex;align-items:center;justify-content:center;gap:6px;height:40px;border-radius:var(--r-sm);background:var(--teal-50);color:var(--teal-dark);font-weight:700;font-size:13.5px;transition:background .15s,color .15s}
+  .card:hover .c-btn{background:var(--teal);color:#fff}
+  .c-btn svg{width:15px;height:15px}
+  @media (min-width:640px){.c-body{padding:14px 14px 16px}.c-body h3{font-size:15.5px}}
+  .empty{display:none;text-align:center;color:var(--muted);padding:40px 16px;background:var(--card);border:1px dashed var(--line);border-radius:var(--r-md);margin-top:16px}
+  .empty b{display:block;color:var(--ink);font-size:16px;margin-bottom:4px}
+  .empty button{margin-top:12px;border:0;background:var(--teal);color:#fff;font-weight:700;padding:10px 16px;border-radius:10px;cursor:pointer}
 
-  /* instagram */
-  .ig-box{margin:34px 0 0;background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#F4F1E8;border-radius:22px;padding:24px 20px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-  .ig-box h4{margin:0;font-size:20px;font-weight:900}
-  .ig-box p{margin:0;opacity:.88;font-size:14.5px;line-height:1.5}
+  /* ---------- como funciona / faq ---------- */
+  .how{margin-top:56px;display:grid;gap:12px;grid-template-columns:1fr}
+  @media (min-width:780px){.how{grid-template-columns:repeat(3,1fr);gap:16px}}
+  .how-item{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:18px}
+  .how-item i{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--teal-50);color:var(--teal);font-style:normal;font-weight:800;margin-bottom:10px}
+  .how-item h3{margin:0 0 4px;font-size:15.5px}
+  .how-item p{margin:0;color:var(--muted);font-size:14px}
+  .section-title{font-size:22px;letter-spacing:-.4px;font-weight:800;margin:56px 0 14px}
+  .faq{display:grid;gap:10px}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:0 16px}
+  .faq summary{cursor:pointer;list-style:none;font-weight:700;padding:15px 24px 15px 0;position:relative}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:20px;color:var(--teal);font-weight:600}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{margin:0 0 15px;color:var(--muted);font-size:14.5px}
 
-  footer{color:var(--muted);font-size:12px;text-align:center;line-height:1.6;padding:28px 16px 40px}
-  footer a{font-weight:800;color:var(--teal)}
+  .cta-ig{margin-top:56px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#F4F7F6;border-radius:var(--r-lg);padding:26px 22px}
+  .cta-ig h2{margin:0;font-size:22px;letter-spacing:-.3px}
+  .cta-ig p{margin:0;opacity:.85;max-width:560px}
+  @media (min-width:780px){.cta-ig{flex-direction:row;align-items:center;justify-content:space-between;padding:30px 34px}}
+
+  footer{margin-top:40px;border-top:1px solid var(--line);background:var(--card)}
+  .foot{display:grid;gap:14px;padding:26px 16px 34px;color:var(--muted);font-size:12.5px;line-height:1.6}
+  .foot .brand b{color:var(--ink);font-size:15px}
+  .foot .brand small{color:var(--muted);opacity:1}
+  .foot a{color:var(--teal);font-weight:700;text-decoration:none}
+  @media (min-width:780px){.foot{grid-template-columns:1fr 2fr;align-items:start}}
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
 <header class="top">
-  <div class="container">
-    <div class="brand">
-      <a class="brand-id" href="./">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="./">
         <img src="img/logo.png" alt="">
         <span><b>Achados Úteis Por Aí</b><small>Garimpados a dedo, bem avaliados e baratos</small></span>
       </a>
-      <a class="ig-btn" href="https://instagram.com/achadosuteisporai" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+      <a class="btn-ig" href="https://instagram.com/achadosuteisporai" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
         Seguir
       </a>
-    </div>
+    </nav>
     <div class="hero">
       <h1>Coisas <em>úteis</em> que cabem no bolso</h1>
-      <p>A gente garimpa produtos baratos e com milhares de vendas pra facilitar o seu dia a dia. Toque no produto e compre direto na Shopee.</p>
+      <p>Produtos baratos, bem avaliados e com milhares de vendas, escolhidos a dedo pra facilitar o seu dia a dia.</p>
+      <ul class="pills">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Compra direto na Shopee</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Só produtos bem avaliados</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Você não paga nada a mais</li>
+      </ul>
     </div>
   </div>
 </header>
 
-<main class="container">
+<main class="wrap">
   <div id="destaque"></div>
 
-  <div class="trust">
-    <div><b>🛒</b>Compra feita direto na Shopee</div>
-    <div><b>⭐</b>Só produtos bem avaliados</div>
-    <div><b>💸</b>Preços que cabem no bolso</div>
+  <section class="catalog" id="achados" aria-labelledby="t-achados">
+    <div class="cat-head">
+      <div>
+        <h2 id="t-achados">Todos os achados</h2>
+        <p id="contagem"></p>
+      </div>
+    </div>
+
+    <div class="toolbar" id="toolbar">
+      <div class="tb-row">
+        <label class="search">
+          <span class="sr-only">Buscar produto</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="busca" type="search" placeholder="Buscar: air fryer, gaveta, pet..." autocomplete="off">
+        </label>
+        <label class="sr-only" for="ordem">Ordenar</label>
+        <select class="sort" id="ordem">
+          <option value="rel">Recomendados</option>
+          <option value="vend">Mais vendidos</option>
+          <option value="preco">Menor preço</option>
+          <option value="novos">Novidades</option>
+        </select>
+      </div>
+      <div class="chips" id="filtros" role="toolbar" aria-label="Filtrar por categoria"></div>
+    </div>
+
+    <div class="grid" id="grade"></div>
+    <div class="empty" id="vazio"><b>Nenhum achado encontrado</b>Tente outra palavra ou veja todas as categorias.<br><button type="button" id="limpar">Ver todos</button></div>
+  </section>
+
+  <h2 class="section-title">Como funciona</h2>
+  <div class="how">
+    <div class="how-item"><i>1</i><h3>A gente garimpa</h3><p>Checamos a fama do produto: nota alta, muitas vendas e preço que vale a pena.</p></div>
+    <div class="how-item"><i>2</i><h3>Você escolhe</h3><p>Toque em "Ver na Shopee" e confira fotos, avaliações e o preço do dia.</p></div>
+    <div class="how-item"><i>3</i><h3>Compra com segurança</h3><p>O pagamento e a entrega são feitos pela própria Shopee, com a garantia dela.</p></div>
   </div>
 
-  <div class="filters-wrap">
-    <div class="filters" id="filtros" role="toolbar" aria-label="Filtrar por categoria"></div>
+  <h2 class="section-title">Dúvidas frequentes</h2>
+  <div class="faq">
+    <details><summary>Eu pago mais caro comprando por aqui?</summary><p>Não. O preço é exatamente o mesmo da Shopee. Alguns links são de afiliado: a Shopee paga uma pequena comissão pra gente, sem custo nenhum pra você.</p></details>
+    <details><summary>Quem vende e entrega o produto?</summary><p>As lojas da Shopee. Você finaliza a compra no site ou app da Shopee, com pagamento protegido e a garantia de reembolso deles.</p></details>
+    <details><summary>O preço do site está desatualizado, e agora?</summary><p>Os preços mudam toda hora na Shopee (promoções, variações de modelo). O valor que vale é sempre o que aparece na Shopee na hora da compra.</p></details>
+    <details><summary>Como recebo os links pelo Instagram?</summary><p>Comente "QUERO" no post do produto que te mandamos o link na hora, direto no seu direct.</p></details>
   </div>
 
-  <div id="secoes"></div>
-
-  <div class="ig-box">
-    <h4>📲 Achados novos toda semana</h4>
-    <p>Siga no Instagram pra ver os vídeos dos produtos. Comenta "QUERO" em qualquer post que a gente manda o link no seu direct.</p>
-    <a class="ig-btn" href="https://instagram.com/achadosuteisporai" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+  <div class="cta-ig">
+    <div>
+      <h2>📲 Achados novos toda semana</h2>
+      <p>Siga no Instagram pra ver os vídeos dos produtos funcionando e ser o primeiro a saber das novidades.</p>
+    </div>
+    <a class="btn-ig" href="https://instagram.com/achadosuteisporai" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
       @achadosuteisporai
     </a>
   </div>
 </main>
 
 <footer>
-  Preços conferidos em <span id="conferido"></span>. Podem mudar a qualquer momento: confira na loja antes de comprar.<br>
-  Alguns links são de afiliado: você paga o mesmo preço e a gente recebe uma pequena comissão, que ajuda a manter o garimpo 💚<br>
-  <a href="https://instagram.com/achadosuteisporai" target="_blank" rel="noopener">@achadosuteisporai</a> · achadosuteisporai.com.br
+  <div class="wrap foot">
+    <a class="brand" href="./"><img src="img/logo.png" alt=""><span><b>Achados Úteis Por Aí</b><small>achadosuteisporai.com.br</small></span></a>
+    <div>
+      Preços conferidos em <span id="conferido"></span> e podem mudar a qualquer momento: o valor que vale é o da Shopee na hora da compra.<br>
+      Este site não é a Shopee. Alguns links são de afiliado: você paga o mesmo preço e a gente recebe uma pequena comissão, que ajuda a manter o garimpo 💚<br>
+      <a href="https://instagram.com/achadosuteisporai" target="_blank" rel="noopener">@achadosuteisporai</a>
+    </div>
+  </div>
 </footer>
 
 <script src="produtos.js"></script>
 <script>
-  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  const P = window.PRODUTOS, C = window.CATEGORIAS;
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const norm = s => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const P = window.PRODUTOS.map((p, i) => ({ ...p, _i: i }));
+  const C = window.CATEGORIAS;
+  const catNome = id => (C.find(c => c.id === id) || {}).nome || '';
+  const num = s => parseFloat(String(s).replace(/\./g, '').replace(',', '.')) || 0;
+  // "+20 mil vendidos" -> 20000, "+1 mil/mês" -> 1000, "Nota 4,8" -> 0
+  const vendas = p => { const m = /\+?\s*([\d.,]+)\s*(mil)?/i.exec(p.selo || ''); return m && !/nota/i.test(p.selo) ? num(m[1]) * (m[2] ? 1000 : 1) : 0; };
+  const seta = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
   document.getElementById('conferido').textContent = window.PRECOS_CONFERIDOS_EM || '';
 
-  // destaque
+  // destaque (ou o produto que a pessoa veio ver: ?p=itemId)
   const pid = new URLSearchParams(location.search).get('p');
   const d = (pid && P.find(p => p.itemId === pid)) || P.find(p => p.destaque);
-  const veio = pid && d && d.itemId === pid;
+  const veio = !!(pid && d && d.itemId === pid);
   if (d) document.getElementById('destaque').innerHTML = `
-    <a class="featured${veio ? '' : ' is-top'}" href="${esc(d.link)}" target="_blank" rel="noopener sponsored">
-      <div class="f-img"><img src="${esc(d.img)}" alt="${esc(d.nome)}"></div>
-      <div class="f-body">${veio ? '' : '<div class="seal"><span>⭐<b>Top 1</b>da semana</span></div>'}
+    <a class="feat${veio ? '' : ' is-top'}" href="${esc(d.link)}" target="_blank" rel="noopener sponsored">
+      <div class="feat-media"><img src="${esc(d.img)}" alt="${esc(d.nome)}"></div>
+      <div class="feat-body">${veio ? '' : '<div class="seal" aria-hidden="true"><span>⭐<b>Top 1</b>da semana</span></div>'}
         <span class="kicker">${veio ? '🔎 Você veio ver este achado' : '🏆 Destaque da semana'}</span>
         <h2>${esc(d.chamada)}</h2>
         <p>${esc(d.descricao || d.nome)}</p>
-        <div class="f-row"><span class="price-lg"><small>${d.aPartir ? 'a partir de' : 'por'}</small>R$ ${esc(d.preco)}</span>${d.selo ? `<span class="badge">🔥 ${esc(d.selo)}</span>` : ''}</div>
-        <span class="cta">Ver oferta na Shopee →</span>
+        <div class="feat-price"><span class="price"><small>${d.aPartir ? 'a partir de' : 'por'}</small>R$ ${esc(d.preco)}</span>${d.selo ? `<span class="proof">🔥 ${esc(d.selo)}</span>` : ''}</div>
+        <span class="btn">Ver oferta na Shopee ${seta}</span>
       </div>
     </a>`;
 
-  // seções por categoria
-  const card = p => `
+  // catálogo
+  const lista = P.filter(p => p !== d);
+  const card = (p, i) => `
     <a class="card" href="${esc(p.link)}" target="_blank" rel="noopener sponsored">
-      ${p.selo ? `<span class="c-tag">🔥 ${esc(p.selo)}</span>` : ''}<img src="${esc(p.img)}" alt="${esc(p.nome)}" loading="eager">
+      <div class="c-media">
+        <img src="${esc(p.img)}" alt="${esc(p.nome)}" loading="${i < 8 ? 'eager' : 'lazy'}" decoding="async">
+        <div class="c-flags">${p.selo ? `<span class="flag">🔥 ${esc(p.selo)}</span>` : '<span></span>'}${p.novo ? '<span class="flag new">Novo</span>' : ''}</div>
+      </div>
       <div class="c-body">
-        <b>${esc(p.chamada)}</b>
-        <small>${esc(p.nome)}</small>
+        <span class="c-cat">${esc(catNome(p.categoria))}</span>
+        <h3>${esc(p.chamada)}</h3>
+        <p>${esc(p.nome)}</p>
         <div class="c-foot">
-          <div class="c-price">${p.aPartir ? '<small class="from">a partir de</small>' : ''}<strong>R$ ${esc(p.preco)}</strong></div>
-          <span class="c-btn">Ver oferta</span>
+          <span class="price"><small>${p.aPartir ? 'a partir de' : ''}</small>R$ ${esc(p.preco)}</span>
+          <span class="c-btn">Ver na Shopee ${seta}</span>
         </div>
       </div>
     </a>`;
-  document.getElementById('secoes').innerHTML = C.map(c => {
-    const itens = P.filter(p => p.categoria === c.id && p !== d);
-    if (!itens.length) return '';
-    return `<section class="cat" data-cat="${c.id}">
-      <h3>${c.icone} ${esc(c.nome)} <span>${itens.length}</span></h3>
-      <div class="grid">${itens.map(card).join('')}</div>
-    </section>`;
-  }).join('');
 
-  // filtros
-  const usadas = C.filter(c => P.some(p => p.categoria === c.id && p !== d));
+  const estado = { cat: 'todos', q: '', ordem: 'rel' };
+  const grade = document.getElementById('grade'), vazio = document.getElementById('vazio');
   const filtros = document.getElementById('filtros');
-  filtros.innerHTML = [`<button class="chip" data-f="todos" aria-pressed="true">Todos</button>`]
-    .concat(usadas.map(c => `<button class="chip" data-f="${c.id}" aria-pressed="false">${c.icone} ${esc(c.nome)}</button>`)).join('');
+
+  const usadas = C.filter(c => lista.some(p => p.categoria === c.id));
+  filtros.innerHTML = [`<button class="chip" data-f="todos" aria-pressed="true">Todos <span>${lista.length}</span></button>`]
+    .concat(usadas.map(c => `<button class="chip" data-f="${c.id}" aria-pressed="false">${c.icone} ${esc(c.nome)} <span>${lista.filter(p => p.categoria === c.id).length}</span></button>`)).join('');
+
+  function render() {
+    const q = norm(estado.q.trim());
+    let itens = lista.filter(p => (estado.cat === 'todos' || p.categoria === estado.cat) &&
+      (!q || norm([p.nome, p.chamada, p.descricao, catNome(p.categoria)].join(' ')).includes(q)));
+    if (estado.ordem === 'vend') itens.sort((a, b) => vendas(b) - vendas(a) || a._i - b._i);
+    if (estado.ordem === 'preco') itens.sort((a, b) => num(a.preco) - num(b.preco));
+    if (estado.ordem === 'novos') itens.sort((a, b) => (b.novo ? 1 : 0) - (a.novo ? 1 : 0) || a._i - b._i);
+    grade.innerHTML = itens.map(card).join('');
+    vazio.style.display = itens.length ? 'none' : 'block';
+    document.getElementById('contagem').textContent = `${itens.length} ${itens.length === 1 ? 'produto' : 'produtos'}${estado.cat !== 'todos' ? ' em ' + catNome(estado.cat) : ''}`;
+  }
+
   filtros.addEventListener('click', e => {
     const b = e.target.closest('.chip'); if (!b) return;
     filtros.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', x === b));
-    document.querySelectorAll('section.cat').forEach(s => s.classList.toggle('hidden', b.dataset.f !== 'todos' && s.dataset.cat !== b.dataset.f));
+    estado.cat = b.dataset.f; render();
   });
+  document.getElementById('busca').addEventListener('input', e => { estado.q = e.target.value; render(); });
+  document.getElementById('ordem').addEventListener('change', e => { estado.ordem = e.target.value; render(); });
+  document.getElementById('limpar').addEventListener('click', () => {
+    estado.q = ''; estado.cat = 'todos'; document.getElementById('busca').value = '';
+    filtros.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', x.dataset.f === 'todos')); render();
+  });
+
+  // borda na barra de filtros quando ela gruda no topo
+  const tb = document.getElementById('toolbar');
+  new IntersectionObserver(([e]) => tb.classList.toggle('stuck', e.intersectionRatio < 1), { threshold: [1], rootMargin: '-1px 0px 0px 0px' }).observe(tb);
+
+  render();
 </script>
 </body>
 </html>
