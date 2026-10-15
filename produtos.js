@@ -10,10 +10,24 @@ window.CATEGORIAS = [
   { id: "tecnologia",  nome: "Tecnologia",  icone: "📱" },
   { id: "cozinha",     nome: "Cozinha",     icone: "🍳" },
   { id: "organizacao", nome: "Organização", icone: "🗂️" },
-  { id: "limpeza",     nome: "Limpeza",     icone: "🧽" }
+  { id: "limpeza",     nome: "Limpeza",     icone: "🧽" },
+  { id: "casa",        nome: "Casa e decoração", icone: "🏠" }
 ];
 
 window.PRODUTOS = [
+  {
+    "nome": "Cristaleira com espelho e fita LED (MDF)",
+    "chamada": "A cristaleira que ilumina a sala",
+    "descricao": "R$885,39 no Pix com cupom. Espelho e fita LED.",
+    "preco": "1.013,04",
+    "img": "img/cristaleira.webp",
+    "link": "https://s.shopee.com.br/9V2GDzFFHE",
+    "selo": "+2 mil vendidos",
+    "categoria": "casa",
+    "shopId": "855489892",
+    "itemId": "22098361574",
+    "novo": true
+  },
   {
     "nome": "Ampliador de tela 3D para celular",
     "chamada": "Transforme o celular numa telona",

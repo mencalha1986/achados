@@ -306,7 +306,7 @@
       <div class="c-body">
         <span class="c-cat">${esc(catNome(p.categoria))}</span>
         <h3>${esc(p.chamada)}</h3>
-        <p>${esc(p.nome)}</p>
+        <p>${esc(p.descricao || p.nome)}</p>
         <div class="c-foot">
           <span class="price"><small>${p.aPartir ? 'a partir de' : ''}</small>R$ ${esc(p.preco)}</span>
           <span class="c-btn">Ver na Shopee ${seta}</span>
